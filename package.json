@@ -1,0 +1,26 @@
+{
+  "name": "rtk-slice-boilerplate",
+  "version": "1.0.0",
+  "description": "rtk-slice-boilerplate",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "rtk-slice-boilerplate": "src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keren-w/rtk-slice-boilerplate.git"
+  },
+  "author": "Keren Wigelman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keren-w/rtk-slice-boilerplate/issues"
+  },
+  "homepage": "https://github.com/keren-w/rtk-slice-boilerplate#readme",
+  "dependencies": {
+    "commander": "^12.0.0"
+  }
+}
