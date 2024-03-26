@@ -4,6 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 const { program } = require('commander'); // If using Commander.js for CLI parsing
+const {getFilesData} = require('./files.utils');
 
 // Define the entry point function
 async function main() {
@@ -24,11 +25,15 @@ async function main() {
       process.exit(1);
     }
 
-    // Generate Redux store slice components
-    // Implement this logic based on your requirements
+    //TODO: convert name to camelCase for file names and PascalCase for type names
 
     console.log(`Redux store slice components for ${name} generated successfully.`);
+
     await fs.promises.mkdir(path.join(process.cwd(), 'store'), { recursive: true });
+    const filesData = getFilesData(name);
+    const promises = filesData.map(fileData => fs.promises.writeFile(fileData.filePath, fileData.template));
+    await Promise.all(promises);
+    
   } catch (error) {
     console.error('Error:', error.message);
     process.exit(1);
