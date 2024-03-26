@@ -3,7 +3,8 @@ const getAsyncTemplate = (sliceName) => {
 import { ActionReducerMapBuilder, createAsyncThunk } from '@reduxjs/toolkit'
 import {actions} from './${sliceName}.consts';
 import {getInitialData} from './${sliceName}.api';
-type TBuilder = ActionReducerMapBuilder<{}>;
+import {ISliceState} from './${sliceName}.types';
+type TBuilder = ActionReducerMapBuilder<ISliceState>;
 
 export const getData = createAsyncThunk(actions.GET_DATA, getInitialData);
 
